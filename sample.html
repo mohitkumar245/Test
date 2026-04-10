@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sample Animated Page</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(120deg, #dbeafe, #f5d0fe, #fde68a);
+      background-size: 180% 180%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 2rem 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+      animation: floatIn 900ms ease-out, gentleBounce 2.2s ease-in-out 1s infinite;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #1f2937;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    p {
+      color: #374151;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Hello, World!</h1>
+    <p>This sample HTML now includes simple CSS animations.</p>
+  </main>
+</body>
+</html>
